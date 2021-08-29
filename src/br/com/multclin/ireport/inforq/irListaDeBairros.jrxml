@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="irListaDeBairros" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a03eab91-a32c-46c9-9396-f2f31cc32c60">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Detalhe" forecolor="#000000" fontName="Tahoma" fontSize="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<queryString>
+		<![CDATA[SELECT bairros.id_bairro,bairros.nome_bairro,cidades.nome_cidade FROM bairros inner join cidades on bairros.fk_cidade=cidades.id_cidade;]]>
+	</queryString>
+	<field name="id_bairro" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_bairro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_cidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement x="199" y="37" width="356" height="23" uuid="5e0ba264-4108-420a-b306-10203939385f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTA DE BAIRROS CADASTRADOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="8" width="140" height="14" uuid="b487d6f3-d452-4ea0-ad48-84f147efe029"/>
+				<textElement>
+					<font size="8" isBold="true" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[#Code.Resolve.Informática]]></text>
+			</staticText>
+			<image>
+				<reportElement x="76" y="28" width="62" height="32" uuid="cb0d7c86-da9c-4c80-8e43-e170cb7fa01a"/>
+				<imageExpression><![CDATA["C:\\projetosjava\\SubGerentePro\\src\\br\\com\\subgerentepro\\ireport\\imagens\\javalOGIN.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="8" y="29" width="68" height="32" uuid="9663bac3-3fe6-46da-804d-53161bb26147"/>
+				<imageExpression><![CDATA["C:\\projetosjava\\SubGerentePro\\src\\br\\com\\subgerentepro\\ireport\\imagens\\iReportLogin.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="21" y="22" width="68" height="10" forecolor="#000000" uuid="e3faba79-cec9-4eff-85c5-a47f1409fdaf"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informações:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="363" y="0" width="57" height="15" uuid="b487bdcb-e572-46ec-8879-162613f7fc90"/>
+				<textElement>
+					<font fontName="Tahoma" size="7" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Impresso em:]]></text>
+			</staticText>
+			<textField pattern="yyyy.MMMMM.dd GGG hh:mm aaa">
+				<reportElement x="420" y="0" width="114" height="13" forecolor="#FF0000" uuid="aae458b0-8144-4ec2-ab61-f30ef007dd14"/>
+				<textElement textAlignment="Right">
+					<font fontName="Tahoma" size="7" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="199" y="12" width="356" height="25" uuid="07c2e7e2-58df-40d2-a192-66faa829df93"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="17" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prefeitura Municipal de Alto Alegre do MA]]></text>
+			</staticText>
+			<image>
+				<reportElement x="137" y="23" width="62" height="37" uuid="0a1ae743-ef7c-4c87-8d57-92ad64926197"/>
+				<imageExpression><![CDATA["C:\\projetosjava\\SubGerentePro\\src\\br\\com\\subgerentepro\\ireport\\imagens\\logoAltoAlegreMA.jpg"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="23" width="199" height="38" uuid="0708b931-c01f-48c3-9a69-d863d5da7f9e"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="21" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="19" y="12" width="37" height="20" uuid="2e08bcd2-53fd-4f8f-a806-1d7043493f14"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="68" y="12" width="185" height="20" uuid="c5087266-0cc9-4438-80bd-5c56ea4ba105"/>
+				<text><![CDATA[BAIRROS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="12" width="100" height="20" uuid="6cc995c2-5a15-4825-ae22-ea2498c16434"/>
+				<text><![CDATA[CIDADE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="31" width="555" height="1" uuid="71562bf5-93dd-4f7f-ba2b-3356f10d0180"/>
+			</line>
+			<line>
+				<reportElement x="0" y="11" width="555" height="1" uuid="274c54c3-03c6-4740-8b3f-8c50c35b6b13"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement style="Detalhe" x="19" y="0" width="37" height="15" uuid="f91fc1de-7994-401f-a803-9cc3ffbc6978"/>
+				<textFieldExpression><![CDATA[$F{id_bairro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detalhe" x="56" y="0" width="227" height="15" uuid="32989406-1a3e-4313-bd1c-761c849b449b"/>
+				<textFieldExpression><![CDATA[$F{nome_bairro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detalhe" x="283" y="0" width="238" height="15" uuid="da7c2642-d03c-439a-8978-cf582231dd4f"/>
+				<textFieldExpression><![CDATA[$F{nome_cidade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="510" y="2" width="45" height="15" uuid="7cce6112-7eba-4969-9354-9d54ba6525d6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="8" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="1" width="161" height="16" forecolor="#000000" uuid="85cbfbaf-e09a-4787-8d59-51642259d8e5"/>
+				<textElement>
+					<font fontName="Tahoma" size="8" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SisProtocolo J Versão Berta]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
